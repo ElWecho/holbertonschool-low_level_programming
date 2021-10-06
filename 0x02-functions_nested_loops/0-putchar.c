@@ -18,9 +18,9 @@ int main(void)
 	char letter7 = 'a';
 	char letter8 = 'r';
 	{
-		_pucthar(letter);
+		_putchar(letter);
 		_putchar(letter2);
-		_putchae(letter3);
+		_putchar(letter3);
 		_putchar(letter4);
 		_putchar(letter5);
 		_putchar(letter6);
