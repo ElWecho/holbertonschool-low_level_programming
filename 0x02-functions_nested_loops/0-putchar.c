@@ -9,9 +9,26 @@
 int main(void)
 {
 
-	char message[] = "_putchar";
-	for (char = 0; char = message; char++)
-		putchar('\n');
+	char letter = '_';
+	char letter2 = 'p';
+	char letter3 = 'u';
+	char letter4 = 't';
+	char letter5 = 'c';
+	char letter6 = 'h';
+	char letter7 = 'a';
+	char letter8 = 'r';
+	{
+		_pucthar(letter);
+		_putchar(letter2);
+		_putchae(letter3);
+		_putchar(letter4);
+		_putchar(letter5);
+		_putchar(letter6);
+		_putchar(letter7);
+		_putchar(letter8);
+	}
 
-	return (0)
+		_putchar('\n');
+	return (0);
 }
+
