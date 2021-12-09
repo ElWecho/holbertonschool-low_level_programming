@@ -1,62 +1,41 @@
 #include "main.h"
-
 /**
- * is_palindrome -  sss
- * @r: string
- * Return: return something
- */
-
-int is_palindrome(char *r)
-{
-
-	int i, size, add;
-
-	i = 0;
-	add = 0;
-
-	size = _strlen_recursion(r);
-
-	add = (size % 2 != 0) ? 2 : 1;
-
-	return (evaluate(r, i, size - 1, add));
-}
-
-/**
- * evaluate - compare
- * @i: i
- * @size: size
+ * _strlen_recursion - function that returns the length of a string.
  * @s: string
- * @add: addition depending if n is odd or even
- * Return: return value
- */
-int evaluate(char *s, int i, int size, int add)
-{
-
-	if (i + add == size  && s[i] == s[size])
-	{
-		return (1);
-	}
-
-	else if (s[i] == s[size])
-	{
-		return (evaluate(s, i + 1, size - 1, add));
-	}
-
-	return (0);
-}
-
-/**
- * _strlen_recursion - legth of a string
- * @s: string
- * Return: return legth
+ *
+ * Return: len of string
  */
 
 int _strlen_recursion(char *s)
 {
-	/*Base condition*/
-	if (!*s)
-		return (0);
+	if (*s)
+		return (1 + _strlen_recursion(s + 1));
+	return (0);
+}
 
+/**
+ * movimiento - looks for char s to s end
+ * @s: string to be search
+ * @len: lenght of the sting
+ * Return: 1 if palindrom 0 if not
+ */
+
+int movimiento(char *s, int len)
+{
+	if (len <= 1)
+		return (1);
+	if (*s != *(s + len - 1))
+		return (0);
 	else
-		return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
+		return (movimiento(s + 1, len - 2));
+}
+/**
+ * is_palindrome - looks for char s to s end
+ * @s: string to be search
+ * Return: 1 if palindrom 0 if not
+ */
+
+int is_palindrome(char *s)
+{
+	return (movimiento(s, _strlen_recursion(s)));
 }
